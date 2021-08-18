@@ -1,3 +1,12 @@
+import sanitizeHtml from 'sanitize-html';
+
+const html = "<strong>hello world</strong>";
+console.log(sanitizeHtml(html));
+console.log(sanitizeHtml("<img src=x onerror=alert('img') />"));
+console.log(sanitizeHtml("console.log('hello world')"));
+console.log(sanitizeHtml("<script>alert('hello world')</script>"));
+
+
 const htmlparser = require('htmlparser2');
 const escapeStringRegexp = require('escape-string-regexp');
 const { klona } = require('klona');
